@@ -32,8 +32,7 @@ class URLFormat {
 		$text = strtolower( $text );
 		$text = preg_replace( '/[^\w ]/', '', $text );
 		$text = preg_replace( '/[ _]+/', '-', $text );
-	
-	return $text;
 		}
+	return $text;
 	}
 }
