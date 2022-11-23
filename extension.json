@@ -1,0 +1,23 @@
+{
+	"name": "URLFormat",
+	"version": "2022",
+	"author": [
+		"Ben White"
+	],
+	"type": "other",
+	"requires": {
+		"MediaWiki": "1.38.4"
+	},
+	"MessagesDirs": {
+		"URLFormat": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"URLFormat": "URLFormat.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "URLFormat::urlformat"
+	},
+	"manifest_version": 2
+}
