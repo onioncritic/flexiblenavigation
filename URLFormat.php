@@ -2,20 +2,12 @@
 
 class URLFormat {
 
-	/**
-	 * Register parser hook
-	 *
-	 * @param $parser Parser
-	 * @return bool
-	 */
-	public static function URLFormat( &$parser ) {
+	public static function urlformat( &$parser ) {
 		$parser->setHook( 'urlformat', __CLASS__.'::parserHook' );
 		return true;
 	}
-	 static function parserHook( $parser ) {
-		global $wgURLFormat
-
-		function URLFormat( &$parser, $text = '' ) {
+	 public static function parserHook( $parser ) {
+		global $wgURLFormat;
 
 		// Validate title
 		if ( $text === '' ) {
@@ -32,7 +24,7 @@ class URLFormat {
 		$text = strtolower( $text );
 		$text = preg_replace( '/[^\w ]/', '', $text );
 		$text = preg_replace( '/[ _]+/', '-', $text );
-		}
+
 	return $text;
 	}
 }
